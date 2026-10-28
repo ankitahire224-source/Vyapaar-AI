@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Sidebar, NavTab } from './components/layout/Sidebar';
+import { Footer } from './components/layout/Footer';
 import { DashboardView } from './components/dashboard/DashboardView';
 import { QuickSalePOSView } from './components/pos/QuickSalePOSView';
 import { ProductsView } from './components/products/ProductsView';
@@ -319,6 +320,12 @@ export const App: React.FC = () => {
           )}
         </main>
       </div>
+
+      {/* Page Footer */}
+      <Footer
+        onSelectTab={setActiveTab}
+        onOpenSettings={() => setIsSettingsOpen(true)}
+      />
 
       {/* Settings Modal */}
       <SettingsModal
